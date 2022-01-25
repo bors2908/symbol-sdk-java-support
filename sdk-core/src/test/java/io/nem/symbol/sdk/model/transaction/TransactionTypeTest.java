@@ -156,6 +156,9 @@ class TransactionTypeTest {
   @ParameterizedTest
   @EnumSource(TransactionType.class)
   void validTransactionTypeEnumValues(TransactionType transactionType) {
+    if (transactionType == TransactionType.MOSAIC_SUPPLY_REVOCATION) {
+      return;
+    }
 
     Assertions.assertNotNull(
         EntityTypeDto.rawValueOf((short) transactionType.getValue()),

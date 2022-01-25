@@ -200,6 +200,9 @@ public class BinarySerializationImpl implements BinarySerialization {
     register(new VrfKeyLinkTransactionBuilderSerializer());
     register(new AggregateTransactionSerializer(TransactionType.AGGREGATE_COMPLETE, this));
     register(new AggregateTransactionSerializer(TransactionType.AGGREGATE_BONDED, this));
+
+    // Added for compatibility with 1.1.0 nodes.
+    register(new AggregateTransactionSerializer(TransactionType.MOSAIC_SUPPLY_REVOCATION, this));
   }
 
   /** @param serializer the serializer to be registered. */

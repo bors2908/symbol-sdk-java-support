@@ -90,7 +90,10 @@ public enum TransactionType {
   MOSAIC_ADDRESS_RESTRICTION((short) 16977, 1),
 
   /** Mosaic global restriction type */
-  MOSAIC_GLOBAL_RESTRICTION((short) 16721, 1);
+  MOSAIC_GLOBAL_RESTRICTION((short) 16721, 1),
+
+  /** Mosaic supply revocation type (added for compatibility with 1.1.0 nodes) */
+  MOSAIC_SUPPLY_REVOCATION((short) 17229, 1);
 
   /** The transaction type value */
   private final int value;

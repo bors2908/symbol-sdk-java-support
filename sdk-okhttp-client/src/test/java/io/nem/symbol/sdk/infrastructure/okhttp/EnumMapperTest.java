@@ -211,6 +211,7 @@ public class EnumMapperTest {
   void testTransactionTypeDTO() {
     Set<Integer> existingValues = new HashSet<>();
     Arrays.stream(TransactionType.values())
+        .filter(type -> type != TransactionType.MOSAIC_SUPPLY_REVOCATION)
         .forEach(
             v -> {
               Assertions.assertNotNull(TransactionTypeEnum.fromValue(v.getValue()), v.name());
